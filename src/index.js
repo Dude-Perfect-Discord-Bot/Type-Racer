@@ -9,11 +9,9 @@ const client = new Client();
 const PREFIX = '>';
 const TOKEN = '';
 
-// Performance
-const IMAGE = loadImage('./src/assets/Typo.png');
-
 client.on(Events.CLIENT_READY, async () => {
-    console.log(`${client.user?.username} Ready!`);    
+    console.log(`${client.user?.username} Ready!`);
+    client.IMAGE = loadImage('./src/assets/Typo.png');    
 });
 
 client.on(Events.MESSAGE_CREATE, async (message) => {
@@ -27,7 +25,7 @@ client.on(Events.MESSAGE_CREATE, async (message) => {
 
         const data = [];
         const text = generateText(3);
-        const attachment = new MessageAttachment(await makeImage(IMAGE, text));
+        const attachment = new MessageAttachment(await makeImage(client.IMAGE, text));
         const embed = new MessageEmbed()
         .setColor('GREEN')
         .setAuthor(message.guild?.name, message.guild?.iconURL({ dynamic: true, format: 'png', size: 4096 }))
@@ -48,7 +46,7 @@ client.on(Events.MESSAGE_CREATE, async (message) => {
 
         collector.on('end', () => {
             if (data.length) {
-                embed.addFields(data.sort((a, b) => a - b));
+                embed.addFields(data.sort((a, b) => a.value - b.value));
             message.channel.send('Time up, The results are!', { embed: embed });
             }
             else
