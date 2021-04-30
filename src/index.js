@@ -46,7 +46,7 @@ client.on(Events.MESSAGE_CREATE, async (message) => {
 
         collector.on('end', () => {
             if (data.length) {
-                embed.addFields(data.sort((a, b) => a - b));
+                embed.addFields(data.sort((a, b) => a.value - b.value));
             message.channel.send('Time up, The results are!', { embed: embed });
             }
             else
