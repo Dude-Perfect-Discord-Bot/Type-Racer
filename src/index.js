@@ -10,8 +10,6 @@ const PLACES = {
     2: '🥈',
     3: '🥉',
 }
-// 0 refers to not running , 1 refers to running.
-let state = 0;
 
 const PREFIX = '>';
 const TOKEN = '';
@@ -23,18 +21,19 @@ client.on(Events.CLIENT_READY, async () => {
 
 client.on(Events.MESSAGE_CREATE, async (message) => {
     if (message.channel.type !== 'text' || !message.guild || message.author.bot) return;
-
+    // 0 refers to not running , 1 refers to running.
+    message.guild.state = 0;
     if (!message.content.startsWith(PREFIX)) return;
     const args = message.content.slice(PREFIX.length).trim().split(/ +/g);
     const cmd = args.shift().toLowerCase();
 
     if (cmd === 'race') {
         // we check if race is running
-        if (state !== 0) return message.channel.send('Type race is already running!');
+        if (message.guild.state !== 0) return message.channel.send('Type race is already running!');
         const data = [];
         const text = generateText(3);
         // set the state to 1, because race as started
-        state = 1;
+        message.guild.state = 1;
         const attachment = new MessageAttachment(await makeImage(client.IMAGE, text));
         const embed = new MessageEmbed()
         .setColor('GREEN')
@@ -73,7 +72,7 @@ client.on(Events.MESSAGE_CREATE, async (message) => {
             message.channel.send('Time up! No one entered the race');
             }
             // we finish the race so set the state back to 0.
-            state = 0;
+            message.guild.state = 0;
         });
 
     }
