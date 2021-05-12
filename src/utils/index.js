@@ -14,8 +14,24 @@ const makeImage = async (baseImage, text) => {
     .toBuffer();
 }
 
+const ordinal = (number) => {
+    const pr = new Intl.PluralRules('en', {
+        type: 'ordinal',
+    });
+    const suffixes = new Map([
+        ['one', 'st'],
+        ['two', 'nd'],
+        ['few', 'rd'],
+        ['other', 'th'],
+    ]);
+    const rule = pr.select(number);
+    const suffix = suffixes.get(rule);
+    return `${number}${suffix}`;
+}
+
 
 module.exports = {
     generateText,
-    makeImage
+    makeImage,
+    ordinal,
 }
