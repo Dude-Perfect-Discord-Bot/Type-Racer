@@ -13,7 +13,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 limitations under the License.
 -->
 # Type Racer [![Discord](https://discord.com/api/guilds/748808130946793483/embed.png)](https://discord.gg/ZzbZpdw)
-The Type Racer Discord, a command/module used in Dude Perfect.
+The Type Racer Discord, a command/module used in [Dude Perfect](https://github.com/Dude-Perfect-Discord-Bot/Dude-Perfect).
 
 ## Resources
 ### [Wiki](https://github.com/Dude-Perfect-Discord-Bot/Dude-Perfect/wiki) • [Invite](http://bit.ly/dpdb_xynox) • [Support](https://discord.gg/ZzbZpdw) • [Donate](https://www.patreon.com/arindamz)
