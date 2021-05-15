@@ -12,8 +12,8 @@ const PLACES = {
     3: '🥉',
 }
 
-const PREFIX = '>';
-const TOKEN = '';
+const PREFIX = process.env.PREFIX;
+const TOKEN = process.env.TOKEN;
 
 client.on(Events.CLIENT_READY, async () => {
     console.log(`${client.user?.username} Ready!`);
