@@ -76,6 +76,14 @@ client.on(Events.MESSAGE_CREATE, async (message) => {
 
     }
 
+   if (cmd === 'ping') {
+	const msg = await message.channel.send('Pinging....');
+	msg.edit([
+	`Pong! \`${client.ws.ping}\` ms!`,
+	`Message Ping! \`${msg.createdTimestamp - message.createdTimestamp}\` ms!`
+	].join('\n'));
+    }
+
 });
 
 client.login(TOKEN);
