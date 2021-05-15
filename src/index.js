@@ -1,10 +1,10 @@
-const { Client, MessageAttachment, MessageCollector, MessageEmbed, Constants: { Events }, Intents } = require('discord.js');
+const { Client, MessageAttachment, MessageCollector, MessageEmbed, Constants: { Events } } = require('discord.js');
 const { loadImage } = require('canvas');
 const { strictEqual }= require('assert');
 const { Stopwatch } = require('@sapphire/stopwatch');
 const { makeImage, generateText, ordinal } = require('./utils');
 require('./extensions/TextChannel');
-const client = new Client({ ws: { intents: Intents.ALL } });
+const client = new Client({ ws: { intents: ['GUILDS', 'GUILD_MESSAGES'] } });
 
 const PLACES = {
     1: '🥇',
