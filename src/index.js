@@ -29,6 +29,7 @@ client.on(Events.MESSAGE_CREATE, async (message) => {
 
     if (cmd === 'race') {
         // we check if race is running
+	if (message.channel.id === "799727227041611776" && (!message.member.hasPermission('BAN_MEMBERS') || message.author.id !== "259008949427119891")) return message.channel.send("You don't have perms to use this command here!");
         if (message.channel.typeracestate !== 0) return message.channel.send('Type race is already running!');
         const data = [];
         const text = generateText(3);
