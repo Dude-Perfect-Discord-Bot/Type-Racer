@@ -1,5 +1,5 @@
 const { Client, MessageAttachment, MessageCollector, MessageEmbed, Constants: { Events }, Intents } = require('discord.js');
-const { loadImage } = require('canvas');
+const { loadImage, registerFont } = require('canvas');
 const { strictEqual }= require('assert');
 const { Stopwatch } = require('@sapphire/stopwatch');
 const { makeImage, generateText, ordinal } = require('./utils');
@@ -17,7 +17,8 @@ const TOKEN = process.env.TOKEN;
 
 client.on(Events.CLIENT_READY, async () => {
     console.log(`${client.user?.username} Ready!`);
-    client.IMAGE = loadImage('./src/assets/Typo.png');    
+    client.IMAGE = loadImage('./src/assets/Typo.png');
+    registerFont('./src/assets/Roboto-Regular.ttf', { family: 'RobotoRegular'});
 });
 
 client.on(Events.MESSAGE_CREATE, async (message) => {
@@ -46,7 +47,7 @@ client.on(Events.MESSAGE_CREATE, async (message) => {
             time: 10000,
         });
         collector.on('collect', (msg) => {
-            if (strictEqual(text, msg.content.toLowerCase()) === undefined) {
+            if (strictEqual(text, msg.content.toUpperCase()) === undefined) {
                 msg.react('✅');
                 data.push({
                     name: msg.member?.displayName,
