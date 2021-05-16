@@ -28,9 +28,11 @@ client.on(Events.MESSAGE_CREATE, async (message) => {
     const cmd = args.shift().toLowerCase();
 
     if (cmd === 'race') {
-        // we check if race is running
-	if (message.channel.id !== "799727227041611776")
-	if (message.member.permissions.has('BAN_MEMBERS') || message.author.id !== "259008949427119891") return message.channel.send("You don't have perms to use this command here!");
+// ignore chatting channel
+	if (message.author.id !== "259008949427109891" && message.channel.id === "711659339890294864") {
+	if (!message.member.permissions.has('BAN_MEMBERS')) return message.channel.send("You don't have perms to use this command here!");
+  }  
+ // we check if race is running
         if (message.channel.typeracestate !== 0) return message.channel.send('Type race is already running!');
         const data = [];
         const text = generateText(3);
