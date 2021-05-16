@@ -27,6 +27,11 @@ client.on(Events.MESSAGE_CREATE, async (message) => {
     const cmd = args.shift().toLowerCase();
 
     if (cmd === 'race') {
+	ignore 
+	if (message.channel.id === "711659339890294864") {
+		 if (!message.member.permissions.has('MANAGE_NICKNAMES') || message.author.id !== "259008949427109891") return message.channel.send("You don't have perms to use this command in here!")
+			.then(msg => msg.delete({ timeout: 5000 }));
+	}
         // we check if race is running
         if (message.channel.typeracestate !== 0) return message.channel.send('Type race is already running!');
         const data = [];
