@@ -66,7 +66,7 @@ client.on(Events.MESSAGE_CREATE, async (message) => {
             if (data.length) {
                 embed.addFields(data.sort((a, b) => a.value - b.value).map(({ name, value }, i) => {
                     return { 
-                        name: `${PLACES[i + 1]}` ? `${PLACES[i + 1]} ${name}` : `\`${i+1}:\` ${name}`,
+                        name: PLACES[i + 1] ? `${PLACES[i + 1]} ${name}` : `${ordinal(i + 1)} ${name}`,
                         value: `\`${value}\``,
                     }
                 }));
