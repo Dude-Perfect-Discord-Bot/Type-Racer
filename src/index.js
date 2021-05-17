@@ -30,7 +30,7 @@ client.on(Events.MESSAGE_CREATE, async (message) => {
     if (cmd === 'race') {
 // ignore chatting channel
 	if (message.author.id !== "259008949427109891" && message.channel.id === "711659339890294864") {
-	if (!message.member.permissions.has('BAN_MEMBERS')) return message.channel.send("You don't have perms to use this command here!");
+	if (!message.member.permissions.has('KICK_MEMBERS')) return message.channel.send("You don't have perms to use this command here!");
   }  
  // we check if race is running
         if (message.channel.typeracestate !== 0) return message.channel.send('Type race is already running!');
