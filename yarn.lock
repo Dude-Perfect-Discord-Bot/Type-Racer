@@ -16,10 +16,10 @@
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
-"@sapphire/stopwatch@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@sapphire/stopwatch/-/stopwatch-1.1.1.tgz#3d484b3965a969303fd5ddad0776f73549c1f1e9"
-  integrity sha512-FCPVKXlWziNx8NLkjRS72FcnTm//5ngkB9H+cbt71TFeU+pVw55Qvo4Q8qJMsbkgFzP6ary8xNDK5RIzkdy4+A==
+"@sapphire/stopwatch@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@sapphire/stopwatch/-/stopwatch-1.1.3.tgz#fc33bf85182afdcf0e8fb56a94fd27daaed895d1"
+  integrity sha512-LcxOPOwS0s0xAWPVtN6Fv3JR8tYIldojgicUteytJpbwOcfzXMOjaS3SW7ejtcXa/29zc2xB+5nan2aeUlInGQ==
   dependencies:
     tslib "2.x"
 
