@@ -31,10 +31,10 @@
     semver "^7.3.4"
     tar "^6.1.0"
 
-"@sapphire/stopwatch@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@sapphire/stopwatch/-/stopwatch-1.2.4.tgz#d7eaf7ab53ef9f43c4e4d1eb9185b5792237d8a7"
-  integrity sha512-THiIVTVYZbLloyFeRB0ISWSW275/l6ZatWrf15rYX/qCdTmn5ZyNfJHVZEUnCcO1juCQVEMK5/kXoYrHucxBaQ==
+"@sapphire/stopwatch@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@sapphire/stopwatch/-/stopwatch-1.2.5.tgz#b3051ab78e2194099778b45c61f189135f6f4a16"
+  integrity sha512-1BSxSJviQlDOU/pQox+TTs9DyLA8RnOW5EdzQ+WvOvfXd0OYUujm6JfKYr0wZjaBYP/IygEx4eorNsKbAkTMYg==
   dependencies:
     tslib "^2.3.1"
 
